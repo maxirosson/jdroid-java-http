@@ -1,0 +1,2 @@
+include ':jdroid-java-http-core'
+include ':jdroid-java-http-okhttp'

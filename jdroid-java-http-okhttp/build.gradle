@@ -1,0 +1,29 @@
+apply plugin: 'com.jdroid.java.library'
+
+ext.ARTIFACT_ID = 'jdroid-java-http-okhttp'
+ext.PROJECT_NAME = 'Jdroid Java Http OKHttp'
+description = 'OKHttp Http Layer Implementation for Jdroid'
+
+buildscript {
+	dependencies {
+		classpath 'com.jdroidframework:jdroid-gradle-java-plugin:' + JDROID_PLUGIN_VERSION
+	}
+}
+
+dependencies {
+
+	// Module dependencies
+	compile project(':jdroid-java-http-core')
+
+	// https://github.com/square/okhttp/blob/master/CHANGELOG.md
+	compile 'com.squareup.okhttp3:okhttp:3.6.0'
+
+	// Testing
+	testCompile "org.testng:testng:6.8.21"
+	testCompile "org.mockito:mockito-all:1.10.19"
+}
+
+test {
+	useTestNG {
+	}
+}
