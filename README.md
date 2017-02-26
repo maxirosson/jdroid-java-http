@@ -7,6 +7,10 @@
 |Staging|[![Build Status](https://api.travis-ci.org/maxirosson/jdroid-java-http.svg?branch=staging)](https://travis-ci.org/maxirosson/jdroid-java-http)|
 |Production|[![Build Status](https://api.travis-ci.org/maxirosson/jdroid-java-http.svg?branch=production)](https://travis-ci.org/maxirosson/jdroid-java-http)|
 
+## Features
+
+* HTTP Service Layer
+ * [OkHttp Implementation](http://square.github.io/okhttp/)
 
 ## Donations
 Help us to continue with this project:
