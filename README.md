@@ -10,7 +10,15 @@
 ## Features
 
 * HTTP Service Layer
+ * GET, POST, PUT, PATCH & DELETE methods
+ * Headers appender
+ * Response validator
+ * Response mocks support
+ * GZIP encoding
+ * Cache support
  * [OkHttp Implementation](http://square.github.io/okhttp/)
+* Parsers
+ * [Jackson JSON parser](https://github.com/FasterXML/jackson)
 
 ## Donations
 Help us to continue with this project:
