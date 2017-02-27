@@ -1,4 +1,4 @@
-# Jdroid Http Library for Java & Android Apps
+# Http Library for Java & Android Apps
 
 ## Continuous Integration
 |Branch|Status|
@@ -19,6 +19,20 @@
  * [OkHttp Implementation](http://square.github.io/okhttp/)
 * Parsers
  * [Jackson JSON parser](https://github.com/FasterXML/jackson)
+ 
+## Setup
+
+Add the following lines to your `build.gradle`:
+
+    repositories {
+      jcenter()
+    }
+
+    dependencies {
+      compile 'com.jdroidframework:jdroid-java-http-okhttp:X.Y.Z'
+    }
+
+Replace the X.Y.Z by the [latest version](https://github.com/maxirosson/jdroid-java-http/releases/latest)
 
 ## Donations
 Help us to continue with this project:
