@@ -12,7 +12,11 @@ buildscript {
 
 dependencies {
 
-	compile 'com.jdroidframework:jdroid-java:0.13.0-SNAPSHOT'
+	if (jdroid.getBooleanProp("JDROID_JAVA_AS_PROJECT_DEPENDENCY", false)) {
+		compile project(":jdroid-java-core")
+	} else {
+		compile 'com.jdroidframework:jdroid-java-core:' + JDROID_JAVA_VERSION
+	}
 
 	// Logging
 	compile "org.slf4j:slf4j-api:1.6.3"
