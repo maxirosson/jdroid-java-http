@@ -35,6 +35,10 @@ public abstract class OkHttpCommand<P, R> {
 			if (message != null) {
 				if (message.equals("Software caused connection abort")) {
 					throw new ConnectionException(e, false);
+				} else if (message.equals("sendto failed: ENOTSOCK (Socket operation on non-socket)")) {
+					throw new ConnectionException(e, true);
+				} else if (message.equals("Connection timed out")) {
+					throw new ConnectionException(e, false);
 				}
 			}
 

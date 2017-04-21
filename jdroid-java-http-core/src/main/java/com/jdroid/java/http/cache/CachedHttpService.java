@@ -42,9 +42,6 @@ public abstract class CachedHttpService implements BodyEnclosingHttpService {
 		this.timeToLive = timeToLive;
 	}
 	
-	/**
-	 * @see HttpService#execute(Parser)
-	 */
 	@Override
 	public <T> T execute(Parser parser) {
 		LOGGER.debug("Executing cache strategy: " + cachingStrategy + " for url: " + getUrl());
