@@ -1,7 +1,8 @@
 package com.jdroid.java.http;
 
-import com.jdroid.java.exception.ConnectionException;
-import com.jdroid.java.exception.HttpResponseException;
+
+import com.jdroid.java.http.exception.ConnectionException;
+import com.jdroid.java.http.exception.HttpResponseException;
 
 public class BasicHttpResponseValidator implements HttpServiceProcessor {
 

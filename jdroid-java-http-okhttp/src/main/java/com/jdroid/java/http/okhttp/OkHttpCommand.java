@@ -1,7 +1,8 @@
 package com.jdroid.java.http.okhttp;
 
-import com.jdroid.java.exception.ConnectionException;
 import com.jdroid.java.exception.UnexpectedException;
+
+import com.jdroid.java.http.exception.ConnectionException;
 
 import java.io.IOException;
 import java.io.InterruptedIOException;
