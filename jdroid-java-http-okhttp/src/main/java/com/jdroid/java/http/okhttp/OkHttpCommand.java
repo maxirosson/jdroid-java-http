@@ -68,6 +68,8 @@ public abstract class OkHttpCommand<P, R> {
 			if (message != null &&
 					message.equals("com.android.org.bouncycastle.jce.exception.ExtCertPathValidatorException: Could not validate certificate: null")) {
 				throw new ConnectionException(e, false);
+			} else if (message != null && message.equals("Remote host closed connection during handshake")) {
+				throw new ConnectionException(e, false);
 			}
 			throw new UnexpectedException(e);
 		} catch (SSLException e) {
