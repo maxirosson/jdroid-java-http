@@ -79,7 +79,7 @@ public abstract class OkHttpCommand<P, R> {
 			if (message != null) {
 				if (message.startsWith("Read error:") && message.endsWith("I/O error during system call, Connection reset by peer")) {
 					throw new ConnectionException(e, true);
-				} else if (message.startsWith("Read error:") && message.endsWith("I/O error during system call, Connection timed out")) {
+				} else if (message.startsWith("Read error:")) {
 					throw new ConnectionException(e, true);
 				} else if (message.startsWith("SSL handshake aborted:") && message.endsWith("I/O error during system call, Connection reset by peer")) {
 					throw new ConnectionException(e, false);
