@@ -1,6 +1,4 @@
-ext.VERSION_MAJOR = 0
-ext.VERSION_MINOR = 14
-ext.VERSION_PATCH = 0
+version = '0.14.0'
 
 ext.JDROID_GITHUB_REPOSITORY_OWNER = 'maxirosson'
 ext.JDROID_GITHUB_REPOSITORY_NAME = 'jdroid-java-http'
@@ -14,23 +12,18 @@ apply plugin: 'com.jdroid.component.builder'
 ext.PROJECT_NAME = 'Jdroid Java Http'
 description = 'Jdroid Java Http'
 
-
 buildscript {
 	repositories {
 		jcenter()
 		String localMavenRepo = project.hasProperty('LOCAL_MAVEN_REPO') ? project.ext.get('LOCAL_MAVEN_REPO') : System.getenv('LOCAL_MAVEN_REPO')
 		if (localMavenRepo != null) {
-			maven {
-				url localMavenRepo
-			}
+			maven { url localMavenRepo }
 		}
-		maven {
-			url "https://oss.sonatype.org/content/repositories/snapshots/"
-		}
+		maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 	}
 	dependencies {
-		classpath 'com.jdroidframework:jdroid-component-builder:0.2.0'
-		classpath 'com.jdroidframework:jdroid-gradle-root-plugin:0.14.0'
+		classpath 'com.jdroidframework:jdroid-component-builder:0.3.0-SNAPSHOT'
+		classpath 'com.jdroidframework:jdroid-gradle-root-plugin:0.16.0'
 	}
 }
 
@@ -41,13 +34,9 @@ allprojects {
 			jcenter()
 			String localMavenRepo = project.hasProperty('LOCAL_MAVEN_REPO') ? project.ext.get('LOCAL_MAVEN_REPO') : System.getenv('LOCAL_MAVEN_REPO')
 			if (localMavenRepo != null) {
-				maven {
-					url localMavenRepo
-				}
+				maven { url localMavenRepo }
 			}
-			maven {
-				url "https://oss.sonatype.org/content/repositories/snapshots/"
-			}
+			maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 		}
 	}
 
@@ -55,12 +44,8 @@ allprojects {
 		jcenter()
 		String localMavenRepo = project.hasProperty('LOCAL_MAVEN_REPO') ? project.ext.get('LOCAL_MAVEN_REPO') : System.getenv('LOCAL_MAVEN_REPO')
 		if (localMavenRepo != null) {
-			maven {
-				url localMavenRepo
-			}
+			maven { url localMavenRepo }
 		}
-		maven {
-			url "https://oss.sonatype.org/content/repositories/snapshots/"
-		}
+		maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 	}
 }
