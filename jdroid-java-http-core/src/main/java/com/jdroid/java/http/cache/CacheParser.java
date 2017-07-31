@@ -21,9 +21,6 @@ public class CacheParser implements Parser {
 		this.cacheFile = cacheFile;
 	}
 	
-	/**
-	 * @see Parser#parse(java.io.InputStream)
-	 */
 	@Override
 	public Object parse(InputStream inputStream) {
 		
@@ -36,19 +33,16 @@ public class CacheParser implements Parser {
 			public void run() {
 				try {
 					inputStreamCopy.reset();
+					FileUtils.copyStream(inputStreamCopy, cacheFile);
+					LOGGER.debug("Saved http request to cache file: " + cacheFile.getAbsolutePath());
 				} catch (IOException e) {
 					LoggerUtils.logHandledException(LOGGER, e);
 				}
-				FileUtils.copyStream(inputStreamCopy, cacheFile);
-				LOGGER.debug("Saved http request to cache file: " + cacheFile.getAbsolutePath());
 			}
 		});
 		return object;
 	}
 	
-	/**
-	 * @see Parser#parse(java.lang.String)
-	 */
 	@Override
 	public Object parse(String input) {
 		return null;

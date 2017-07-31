@@ -1,7 +1,7 @@
 package com.jdroid.java.http;
 
 import com.jdroid.java.exception.ErrorCode;
-import com.jdroid.java.exception.HttpResponseException;
+import com.jdroid.java.http.exception.HttpResponseException;
 import com.jdroid.java.utils.LoggerUtils;
 
 import org.slf4j.Logger;

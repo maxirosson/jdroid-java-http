@@ -1,7 +1,8 @@
 package com.jdroid.java.http.okhttp;
 
-import com.jdroid.java.exception.ConnectionException;
 import com.jdroid.java.exception.UnexpectedException;
+
+import com.jdroid.java.http.exception.ConnectionException;
 
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -35,6 +36,12 @@ public abstract class OkHttpCommand<P, R> {
 			if (message != null) {
 				if (message.equals("Software caused connection abort")) {
 					throw new ConnectionException(e, false);
+				} else if (message.equals("sendto failed: ENOTSOCK (Socket operation on non-socket)")) {
+					throw new ConnectionException(e, true);
+				} else if (message.equals("Connection timed out")) {
+					throw new ConnectionException(e, false);
+				} else if (message.equals("Connection reset")) {
+					throw new ConnectionException(e, true);
 				}
 			}
 
@@ -63,6 +70,8 @@ public abstract class OkHttpCommand<P, R> {
 			if (message != null &&
 					message.equals("com.android.org.bouncycastle.jce.exception.ExtCertPathValidatorException: Could not validate certificate: null")) {
 				throw new ConnectionException(e, false);
+			} else if (message != null && message.equals("Remote host closed connection during handshake")) {
+				throw new ConnectionException(e, false);
 			}
 			throw new UnexpectedException(e);
 		} catch (SSLException e) {
@@ -70,7 +79,7 @@ public abstract class OkHttpCommand<P, R> {
 			if (message != null) {
 				if (message.startsWith("Read error:") && message.endsWith("I/O error during system call, Connection reset by peer")) {
 					throw new ConnectionException(e, true);
-				} else if (message.startsWith("Read error:") && message.endsWith("I/O error during system call, Connection timed out")) {
+				} else if (message.startsWith("Read error:")) {
 					throw new ConnectionException(e, true);
 				} else if (message.startsWith("SSL handshake aborted:") && message.endsWith("I/O error during system call, Connection reset by peer")) {
 					throw new ConnectionException(e, false);
