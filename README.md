@@ -18,7 +18,7 @@
  * Cache support
  * [OkHttp Implementation](http://square.github.io/okhttp/)
 * Parsers
- * [Jackson JSON parser](https://github.com/FasterXML/jackson)
+ * [Gson parser](https://github.com/google/gson)
  
 ## Setup
 
