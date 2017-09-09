@@ -42,6 +42,10 @@ public abstract class OkHttpCommand<P, R> {
 					throw new ConnectionException(e, false);
 				} else if (message.equals("Connection reset")) {
 					throw new ConnectionException(e, true);
+				} else if (message.equals("Network is unreachable")) {
+					throw new ConnectionException(e, true);
+				} else if (message.equals("Connection refused")) {
+					throw new ConnectionException(e, true);
 				}
 			}
 
