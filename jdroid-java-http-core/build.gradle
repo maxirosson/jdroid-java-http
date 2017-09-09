@@ -18,6 +18,7 @@ dependencies {
 		compile 'com.jdroidframework:jdroid-java-core:' + JDROID_JAVA_VERSION
 	}
 
+	// https://github.com/google/gson/blob/master/CHANGELOG.md
 	compile ('com.google.code.gson:gson:2.8.1')
 
 	// Logging
