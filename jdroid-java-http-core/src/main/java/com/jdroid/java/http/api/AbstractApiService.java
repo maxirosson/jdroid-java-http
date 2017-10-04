@@ -1,5 +1,6 @@
 package com.jdroid.java.http.api;
 
+import com.google.gson.Gson;
 import com.jdroid.java.collections.Lists;
 import com.jdroid.java.exception.UnexpectedException;
 import com.jdroid.java.http.HttpService;
@@ -268,5 +269,9 @@ public abstract class AbstractApiService {
 	protected void marshall(BodyEnclosingHttpService httpService, Object object, MarshallerMode mode,
 			Map<String, String> extras) {
 		httpService.setBody(MarshallerProvider.get().marshall(object, mode, extras).toString());
+	}
+	
+	public void autoMarshall(BodyEnclosingHttpService httpService, Object object) {
+		httpService.setBody(new Gson().toJson(object));
 	}
 }
