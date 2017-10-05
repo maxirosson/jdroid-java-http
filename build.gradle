@@ -3,8 +3,8 @@ version = '0.15.0'
 ext.JDROID_GITHUB_REPOSITORY_OWNER = 'maxirosson'
 ext.JDROID_GITHUB_REPOSITORY_NAME = 'jdroid-java-http'
 
-ext.JDROID_GRADLE_PLUGIN_VERSION = '0.16.3'
-ext.JDROID_JAVA_VERSION = '0.14.0'
+ext.JDROID_GRADLE_PLUGIN_VERSION = '0.17.0'
+ext.JDROID_JAVA_VERSION = '0.15.0-SNAPSHOT'
 
 apply plugin: 'com.jdroid.component.builder'
 apply plugin: 'com.jdroid.root'
@@ -24,7 +24,7 @@ buildscript {
 	}
 	dependencies {
 		classpath 'com.jdroidframework:jdroid-component-builder:0.3.0-SNAPSHOT'
-		classpath 'com.jdroidframework:jdroid-gradle-root-plugin:0.16.3'
+		classpath 'com.jdroidframework:jdroid-gradle-root-plugin:0.17.0'
 	}
 }
 
