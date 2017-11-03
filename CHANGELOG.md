@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.15.0](https://github.com/maxirosson/jdroid-java-http/tree/v0.15.0) (2017-11-03)
+[Full Changelog](https://github.com/maxirosson/jdroid-java-http/compare/v0.14.0...v0.15.0)
+
+**Implemented enhancements:**
+
+- Add GsonParser [\#2](https://github.com/maxirosson/jdroid-java-http/issues/2)
+
+**Closed issues:**
+
+- Upgrade to jdroid gradle plugin v0.18.0 [\#4](https://github.com/maxirosson/jdroid-java-http/issues/4)
+- Upgrade to okhttp v3.9.0 [\#3](https://github.com/maxirosson/jdroid-java-http/issues/3)
+
 ## [v0.14.0](https://github.com/maxirosson/jdroid-java-http/tree/v0.14.0) (2017-07-31)
 [Full Changelog](https://github.com/maxirosson/jdroid-java-http/compare/v0.13.0...v0.14.0)
 
