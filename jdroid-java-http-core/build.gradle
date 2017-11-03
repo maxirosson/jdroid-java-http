@@ -13,17 +13,17 @@ buildscript {
 dependencies {
 
 	if (jdroid.getBooleanProp("JDROID_JAVA_AS_PROJECT_DEPENDENCY", false)) {
-		compile project(":jdroid-java-core")
+		implementation project(":jdroid-java-core")
 	} else {
-		compile 'com.jdroidframework:jdroid-java-core:' + JDROID_JAVA_VERSION
+		implementation 'com.jdroidframework:jdroid-java-core:' + JDROID_JAVA_VERSION
 	}
 
 	// Logging
-	compile "org.slf4j:slf4j-api:1.6.3"
+	api "org.slf4j:slf4j-api:1.6.3"
 
 	// Testing
-	testCompile "org.testng:testng:6.8.21"
-	testCompile "org.mockito:mockito-all:1.10.19"
+	testImplementation "org.testng:testng:6.8.21"
+	testImplementation "org.mockito:mockito-all:1.10.19"
 }
 
 test {
