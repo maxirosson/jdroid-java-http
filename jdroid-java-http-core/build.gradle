@@ -13,9 +13,9 @@ buildscript {
 dependencies {
 
 	if (jdroid.getBooleanProp("JDROID_JAVA_AS_PROJECT_DEPENDENCY", false)) {
-		implementation project(":jdroid-java-core")
+		api project(":jdroid-java-core")
 	} else {
-		implementation 'com.jdroidframework:jdroid-java-core:' + JDROID_JAVA_VERSION
+		api 'com.jdroidframework:jdroid-java-core:' + JDROID_JAVA_VERSION
 	}
 
 	// Logging
