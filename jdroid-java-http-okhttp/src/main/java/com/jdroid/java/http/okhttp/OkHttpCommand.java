@@ -46,6 +46,8 @@ public abstract class OkHttpCommand<P, R> {
 					throw new ConnectionException(e, true);
 				} else if (message.equals("Connection refused")) {
 					throw new ConnectionException(e, true);
+				} else {
+					throw new ConnectionException(e, false);
 				}
 			}
 
@@ -70,14 +72,7 @@ public abstract class OkHttpCommand<P, R> {
 			}
 			throw new UnexpectedException(e);
 		} catch (SSLHandshakeException e) {
-			String message = e.getMessage();
-			if (message != null &&
-					message.equals("com.android.org.bouncycastle.jce.exception.ExtCertPathValidatorException: Could not validate certificate: null")) {
-				throw new ConnectionException(e, false);
-			} else if (message != null && message.equals("Remote host closed connection during handshake")) {
-				throw new ConnectionException(e, false);
-			}
-			throw new UnexpectedException(e);
+			throw new ConnectionException(e, false);
 		} catch (SSLException e) {
 			String message = e.getMessage();
 			if (message != null) {
