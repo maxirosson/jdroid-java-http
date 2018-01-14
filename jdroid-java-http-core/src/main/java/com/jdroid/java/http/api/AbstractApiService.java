@@ -2,7 +2,6 @@ package com.jdroid.java.http.api;
 
 import com.google.gson.Gson;
 import com.jdroid.java.collections.Lists;
-import com.jdroid.java.exception.UnexpectedException;
 import com.jdroid.java.http.HttpService;
 import com.jdroid.java.http.HttpServiceFactory;
 import com.jdroid.java.http.HttpServiceProcessor;
@@ -218,22 +217,7 @@ public abstract class AbstractApiService {
 	}
 
 	protected HttpServiceFactory createHttpServiceFactory() {
-		HttpServiceFactory httpServiceFactory = createFactory("com.jdroid.java.http.okhttp.OkHttpServiceFactory");
-		if (httpServiceFactory == null) {
-			httpServiceFactory  = createFactory("com.jdroid.java.http.apache.ApacheHttpServiceFactory");
-			if (httpServiceFactory == null) {
-				httpServiceFactory  = createFactory("com.jdroid.java.http.urlconnection.UrlConnectionHttpServiceFactory");
-			}
-		}
-		return httpServiceFactory;
-	}
-
-	private HttpServiceFactory createFactory(String className) {
-		try {
-			return ReflectionUtils.newInstance(className);
-		} catch (UnexpectedException e) {
-			return null;
-		}
+		return ReflectionUtils.newInstance("com.jdroid.java.http.okhttp.OkHttpServiceFactory");
 	}
 
 	protected abstract Server getServer();

@@ -19,7 +19,7 @@ import okhttp3.Interceptor;
 
 public class OkHttpServiceFactory implements HttpServiceFactory {
 
-	private List<Interceptor> networkInterceptors = Lists.newArrayList();
+	protected List<Interceptor> networkInterceptors = Lists.newArrayList();
 
 	@Override
 	public HttpService newGetService(Server server, List<Object> urlSegments, List<HttpServiceProcessor> httpServiceProcessors) {
