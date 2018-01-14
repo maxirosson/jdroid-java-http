@@ -222,8 +222,12 @@ public abstract class AbstractHttpService implements HttpService {
 	@Override
 	public void addQueryParameter(String name, Object value) {
 		if (value != null) {
-			queryParameters.put(name, EncodingUtils.encodeURL(value.toString()));
+			queryParameters.put(name, encodeQueryParameterValue(value.toString()));
 		}
+	}
+	
+	protected String encodeQueryParameterValue(String value) {
+		return EncodingUtils.encodeURL(value);
 	}
 
 	/**
@@ -241,8 +245,12 @@ public abstract class AbstractHttpService implements HttpService {
 	public void addUrlSegment(Object segment) {
 		String segmentString = segment.toString();
 		if (StringUtils.isNotEmpty(segmentString)) {
-			urlSegments.add(EncodingUtils.encodeURL(segmentString));
+			urlSegments.add(encodeUrlSegment(segmentString));
 		}
+	}
+	
+	protected String encodeUrlSegment(String segment) {
+		return EncodingUtils.encodeURL(segment);
 	}
 
 	public String getUrlSegments() {
