@@ -16,7 +16,7 @@ dependencies {
 	api project(':jdroid-java-http-core')
 
 	// https://github.com/square/okhttp/blob/master/CHANGELOG.md
-	api 'com.squareup.okhttp3:okhttp:3.9.1'
+	api 'com.squareup.okhttp3:okhttp:3.10.0'
 
 	// Testing
 	testImplementation "org.testng:testng:6.8.21"
