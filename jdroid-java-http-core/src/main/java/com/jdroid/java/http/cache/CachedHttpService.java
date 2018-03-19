@@ -67,7 +67,7 @@ public abstract class CachedHttpService implements BodyEnclosingHttpService {
 				try {
 					fileInputStream = new FileInputStream(cacheFile);
 					response = (T)(parser.parse(fileInputStream));
-					LOGGER.info("Reading http request from cache: " + cacheFile.getAbsolutePath());
+					LOGGER.debug("Reading http request from cache: " + cacheFile.getAbsolutePath());
 				} catch (FileNotFoundException e) {
 					LoggerUtils.logHandledException(LOGGER, new UnexpectedException("Error when opening cache file: " + cacheFile.getAbsolutePath(), e));
 				} catch (Exception e) {
@@ -77,7 +77,7 @@ public abstract class CachedHttpService implements BodyEnclosingHttpService {
 				}
 			}
 		} else {
-			LOGGER.info("Http request not present on cache: " + cacheFile.getAbsolutePath());
+			LOGGER.debug("Http request not present on cache: " + cacheFile.getAbsolutePath());
 		}
 		return response;
 	}
