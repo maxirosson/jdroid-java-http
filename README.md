@@ -1,11 +1,11 @@
 # Http Library for Java & Android Apps
 
 ## Continuous Integration
-|Branch|Status|
-| ------------- | ------------- |
-|Master|[![Build Status](https://travis-ci.org/maxirosson/jdroid-java-http.svg?branch=master)](https://travis-ci.org/maxirosson/jdroid-java-http)|
-|Staging|[![Build Status](https://api.travis-ci.org/maxirosson/jdroid-java-http.svg?branch=staging)](https://travis-ci.org/maxirosson/jdroid-java-http)|
-|Production|[![Build Status](https://api.travis-ci.org/maxirosson/jdroid-java-http.svg?branch=production)](https://travis-ci.org/maxirosson/jdroid-java-http)|
+|Branch|Status|Workflows|Insights|
+| ------------- | ------------- | ------------- | ------------- |
+|master|[![CircleCI](https://circleci.com/gh/maxirosson/jdroid-java-http/tree/master.svg?style=svg)](https://circleci.com/gh/maxirosson/jdroid-java-http/tree/master)|[Workflows](https://circleci.com/gh/maxirosson/workflows/jdroid-java-http/tree/master)|[Insights](https://circleci.com/build-insights/gh/maxirosson/jdroid-java-http/master)|
+|staging|[![CircleCI](https://circleci.com/gh/maxirosson/jdroid-java-http/tree/staging.svg?style=svg)](https://circleci.com/gh/maxirosson/jdroid-java-http/tree/staging)|[Workflows](https://circleci.com/gh/maxirosson/workflows/jdroid-java-http/tree/staging)|[Insights](https://circleci.com/build-insights/gh/maxirosson/jdroid-java-http/staging)|
+|production|[![CircleCI](https://circleci.com/gh/maxirosson/jdroid-java-http/tree/production.svg?style=svg)](https://circleci.com/gh/maxirosson/jdroid-java-http/tree/production)|[Workflows](https://circleci.com/gh/maxirosson/workflows/jdroid-java-http/tree/production)|[Insights](https://circleci.com/build-insights/gh/maxirosson/jdroid-java-http/production)|
 
 ## Features
 
