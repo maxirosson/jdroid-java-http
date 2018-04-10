@@ -29,7 +29,7 @@ Add the following lines to your `build.gradle`:
     }
 
     dependencies {
-      implementation 'com.jdroidframework:jdroid-java-http-okhttp:X.Y.Z'
+      implementation 'com.jdroidtools:jdroid-java-http-okhttp:X.Y.Z'
     }
 
 Replace the X.Y.Z by the [latest version](https://github.com/maxirosson/jdroid-java-http/releases/latest)
