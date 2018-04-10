@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.0.0](https://github.com/maxirosson/jdroid-java-http/tree/v1.0.0) (2018-04-10)
+[Full Changelog](https://github.com/maxirosson/jdroid-java-http/compare/v0.15.0...v1.0.0)
+
+**Implemented enhancements:**
+
+- Support to override the query parameters & url segments default encoding [\#6](https://github.com/maxirosson/jdroid-java-http/issues/6)
+
+**Closed issues:**
+
+- Upgrade to okhttp v3.10.0 [\#5](https://github.com/maxirosson/jdroid-java-http/issues/5)
+
 ## [v0.15.0](https://github.com/maxirosson/jdroid-java-http/tree/v0.15.0) (2017-11-03)
 [Full Changelog](https://github.com/maxirosson/jdroid-java-http/compare/v0.14.0...v0.15.0)
 
