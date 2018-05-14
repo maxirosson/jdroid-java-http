@@ -148,17 +148,17 @@ public abstract class AbstractMockHttpService implements MultipartHttpService {
 	}
 	
 	@Override
-	public void setConnectionTimeout(Integer connectionTimeout) {
+	public void setConnectionTimeout(Long connectionTimeout) {
 		// Do Nothing
 	}
 
 	@Override
-	public void setReadTimeout(Integer readTimeout) {
+	public void setReadTimeout(Long readTimeout) {
 		// Do Nothing
 	}
 
 	@Override
-	public void setWriteTimeout(Integer writeTimeout) {
+	public void setWriteTimeout(Long writeTimeout) {
 		// Do Nothing
 	}
 

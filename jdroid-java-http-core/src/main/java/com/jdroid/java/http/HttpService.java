@@ -56,11 +56,11 @@ public interface HttpService {
 	/**
 	 * @param connectionTimeout The connection timeout in milliseconds.
 	 */
-	public void setConnectionTimeout(Integer connectionTimeout);
+	public void setConnectionTimeout(Long connectionTimeout);
 
-	public void setReadTimeout(Integer readTimeout);
+	public void setReadTimeout(Long readTimeout);
 
-	public void setWriteTimeout(Integer writeTimeout);
+	public void setWriteTimeout(Long writeTimeout);
 
 	/**
 	 * @param userAgent The user agent

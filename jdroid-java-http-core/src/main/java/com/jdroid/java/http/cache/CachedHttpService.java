@@ -98,99 +98,66 @@ public abstract class CachedHttpService implements BodyEnclosingHttpService {
 		return Hasher.SHA_1.hash(key) + ".cache";
 	}
 	
-	/**
-	 * @see HttpService#addHeader(java.lang.String, java.lang.String)
-	 */
 	@Override
 	public void addHeader(String name, String value) {
 		httpService.addHeader(name, value);
 	}
 	
-	/**
-	 * @see HttpService#addQueryParameter(java.lang.String, java.lang.Object)
-	 */
 	@Override
 	public void addQueryParameter(String name, Object value) {
 		httpService.addQueryParameter(name, value);
 	}
 	
-	/**
-	 * @see HttpService#addQueryParameter(java.lang.String, java.util.Collection)
-	 */
 	@Override
 	public void addQueryParameter(String name, Collection<?> values) {
 		httpService.addQueryParameter(name, values);
 	}
 	
-	/**
-	 * @see HttpService#addUrlSegment(java.lang.Object)
-	 */
 	@Override
 	public void addUrlSegment(Object segment) {
 		httpService.addUrlSegment(segment);
 	}
 	
-	/**
-	 * @see HttpService#addHttpServiceProcessor(HttpServiceProcessor)
-	 */
 	@Override
 	public void addHttpServiceProcessor(HttpServiceProcessor httpServiceProcessor) {
 		httpService.addHttpServiceProcessor(httpServiceProcessor);
 	}
 	
-	/**
-	 * @see HttpService#setConnectionTimeout(java.lang.Integer)
-	 */
 	@Override
-	public void setConnectionTimeout(Integer connectionTimeout) {
+	public void setConnectionTimeout(Long connectionTimeout) {
 		httpService.setConnectionTimeout(connectionTimeout);
 	}
 
 	@Override
-	public void setReadTimeout(Integer readTimeout) {
+	public void setReadTimeout(Long readTimeout) {
 		httpService.setReadTimeout(readTimeout);
 	}
 
 	@Override
-	public void setWriteTimeout(Integer writeTimeout) {
+	public void setWriteTimeout(Long writeTimeout) {
 		httpService.setWriteTimeout(writeTimeout);
 	}
 
-	/**
-	 * @see HttpService#setUserAgent(java.lang.String)
-	 */
 	@Override
 	public void setUserAgent(String userAgent) {
 		httpService.setUserAgent(userAgent);
 	}
 	
-	/**
-	 * @see HttpService#setSsl(java.lang.Boolean)
-	 */
 	@Override
 	public void setSsl(Boolean ssl) {
 		httpService.setSsl(ssl);
 	}
 	
-	/**
-	 * @see HttpService#getUrl()
-	 */
 	@Override
 	public String getUrl() {
 		return httpService.getUrl();
 	}
 	
-	/**
-	 * @see HttpService#getUrlSuffix()
-	 */
 	@Override
 	public String getUrlSuffix() {
 		return httpService.getUrlSuffix();
 	}
 	
-	/**
-	 * @see BodyEnclosingHttpService#setBody(String)
-	 */
 	@Override
 	public void setBody(String body) {
 		((BodyEnclosingHttpService)httpService).setBody(body);

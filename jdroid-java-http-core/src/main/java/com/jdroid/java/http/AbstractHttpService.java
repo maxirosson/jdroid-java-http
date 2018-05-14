@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractHttpService implements HttpService {
 
@@ -22,14 +23,14 @@ public abstract class AbstractHttpService implements HttpService {
 
 	private Boolean ssl = false;
 
-	/** Connection timeout in milliseconds. 10 seconds as default */
-	private Integer connectionTimeout = 10000;
+	/** Connection timeout in milliseconds */
+	private Long connectionTimeout = TimeUnit.SECONDS.toMillis(10);
 
-	/** Read timeout in milliseconds. 60 seconds as default */
-	private Integer readTimeout = 60000;
+	/** Read timeout in milliseconds */
+	private Long readTimeout = TimeUnit.SECONDS.toMillis(60);
 
-	/** Write timeout in milliseconds. 60 seconds as default */
-	private Integer writeTimeout = 60000;
+	/** Write timeout in milliseconds  */
+	private Long writeTimeout = TimeUnit.SECONDS.toMillis(60);
 
 	private String userAgent;
 
@@ -147,29 +148,29 @@ public abstract class AbstractHttpService implements HttpService {
 	}
 
 	@Override
-	public void setConnectionTimeout(Integer connectionTimeout) {
+	public void setConnectionTimeout(Long connectionTimeout) {
 		this.connectionTimeout = connectionTimeout;
 	}
 
-	public Integer getConnectionTimeout() {
+	public Long getConnectionTimeout() {
 		return connectionTimeout;
 	}
 
-	public Integer getReadTimeout() {
+	public Long getReadTimeout() {
 		return readTimeout;
 	}
 
 	@Override
-	public void setReadTimeout(Integer readTimeout) {
+	public void setReadTimeout(Long readTimeout) {
 		this.readTimeout = readTimeout;
 	}
 
-	public Integer getWriteTimeout() {
+	public Long getWriteTimeout() {
 		return writeTimeout;
 	}
 
 	@Override
-	public void setWriteTimeout(Integer writeTimeout) {
+	public void setWriteTimeout(Long writeTimeout) {
 		this.writeTimeout = writeTimeout;
 	}
 
