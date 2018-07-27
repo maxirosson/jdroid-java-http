@@ -18,9 +18,6 @@ dependencies {
 		api 'com.jdroidtools:jdroid-java-core:' + JDROID_JAVA_VERSION
 	}
 
-	// Logging
-	api "org.slf4j:slf4j-api:1.6.3"
-
 	// Testing
 	testImplementation "org.testng:testng:6.8.21"
 	testImplementation "org.mockito:mockito-all:1.10.19"
