@@ -26,7 +26,7 @@ public abstract class OkBodyEnclosingHttpService extends OkHttpService implement
 		RequestBody requestBody = null;
 		if (body != null) {
 			AbstractHttpService.LOGGER.debug("Body: " + body);
-			requestBody = RequestBody.create(MediaType.parse(MimeType.JSON), body);
+			requestBody = RequestBody.create(MediaType.get(MimeType.JSON), body);
 		}
 		onConfigureRequestBuilder(builder, requestBody);
 	}
