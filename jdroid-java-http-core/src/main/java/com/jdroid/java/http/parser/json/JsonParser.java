@@ -1,6 +1,7 @@
 package com.jdroid.java.http.parser.json;
 
 import com.jdroid.java.collections.Lists;
+import com.jdroid.java.http.parser.Parser;
 import com.jdroid.java.json.JSONArray;
 import com.jdroid.java.json.JSONException;
 import com.jdroid.java.json.JSONObject;
@@ -18,7 +19,7 @@ import java.util.List;
  * 
  * @param <T>
  */
-public abstract class JsonParser<T> implements com.jdroid.java.http.parser.Parser {
+public abstract class JsonParser<T> implements Parser {
 	
 	private static final Logger LOGGER = LoggerUtils.getLogger(JsonParser.class);
 	private static final String ARRAY_PREFIX = "[";

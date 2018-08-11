@@ -1,6 +1,8 @@
 package com.jdroid.java.http.parser.json;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.jdroid.java.date.DateConfiguration;
 import com.jdroid.java.http.parser.Parser;
 import com.jdroid.java.utils.FileUtils;
 import com.jdroid.java.utils.StringUtils;
@@ -24,7 +26,12 @@ public class GsonParser implements Parser {
 	
 	@Override
 	public Object parse(String input) {
-		Gson gson = new Gson();
-		return gson.fromJson(input, type);
+		return createGson().fromJson(input, type);
+	}
+	
+	protected Gson createGson() {
+		GsonBuilder gsonBuilder = new GsonBuilder();
+		gsonBuilder.setDateFormat(DateConfiguration.DEFAULT_DATE_TIME_FORMAT);
+		return gsonBuilder.create();
 	}
 }
