@@ -4,10 +4,7 @@ import com.jdroid.java.collections.Lists;
 import com.jdroid.java.collections.Maps;
 import com.jdroid.java.exception.UnexpectedException;
 import com.jdroid.java.http.parser.Parser;
-import com.jdroid.java.utils.EncodingUtils;
-import com.jdroid.java.utils.FileUtils;
-import com.jdroid.java.utils.LoggerUtils;
-import com.jdroid.java.utils.StringUtils;
+import com.jdroid.java.utils.*;
 
 import org.slf4j.Logger;
 
@@ -115,7 +112,7 @@ public abstract class AbstractHttpService implements HttpService {
 			}
 			return null;
 		} finally {
-			FileUtils.safeClose(inputStream);
+			StreamUtils.safeClose(inputStream);
 			doFinally();
 		}
 	}

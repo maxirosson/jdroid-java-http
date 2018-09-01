@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jdroid.java.date.DateConfiguration;
 import com.jdroid.java.http.parser.Parser;
-import com.jdroid.java.utils.FileUtils;
+import com.jdroid.java.utils.StreamUtils;
 import com.jdroid.java.utils.StringUtils;
 
 import java.io.InputStream;
@@ -20,7 +20,7 @@ public class GsonParser implements Parser {
 	
 	@Override
 	public Object parse(InputStream inputStream) {
-		String content = FileUtils.toString(inputStream);
+		String content = StreamUtils.toString(inputStream);
 		return StringUtils.isNotBlank(content) ? parse(content) : null;
 	}
 	
@@ -31,7 +31,7 @@ public class GsonParser implements Parser {
 	
 	protected Gson createGson() {
 		GsonBuilder gsonBuilder = new GsonBuilder();
-		gsonBuilder.setDateFormat(DateConfiguration.DEFAULT_DATE_TIME_FORMAT);
+		gsonBuilder.setDateFormat(DateConfiguration.getDefaultDateTimeFormat());
 		return gsonBuilder.create();
 	}
 }

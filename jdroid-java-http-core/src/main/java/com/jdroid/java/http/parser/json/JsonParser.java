@@ -5,10 +5,9 @@ import com.jdroid.java.http.parser.Parser;
 import com.jdroid.java.json.JSONArray;
 import com.jdroid.java.json.JSONException;
 import com.jdroid.java.json.JSONObject;
-import com.jdroid.java.utils.FileUtils;
 import com.jdroid.java.utils.LoggerUtils;
+import com.jdroid.java.utils.StreamUtils;
 import com.jdroid.java.utils.StringUtils;
-
 import org.slf4j.Logger;
 
 import java.io.InputStream;
@@ -56,7 +55,7 @@ public abstract class JsonParser<T> implements Parser {
 	
 	@Override
 	public Object parse(InputStream inputStream) {
-		String content = FileUtils.toString(inputStream);
+		String content = StreamUtils.toString(inputStream);
 		return StringUtils.isNotBlank(content) ? parse(content) : null;
 	}
 	

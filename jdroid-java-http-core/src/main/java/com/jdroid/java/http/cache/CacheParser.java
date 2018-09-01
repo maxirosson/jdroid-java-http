@@ -1,13 +1,15 @@
 package com.jdroid.java.http.cache;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import org.slf4j.Logger;
 import com.jdroid.java.concurrent.ExecutorUtils;
 import com.jdroid.java.http.parser.Parser;
 import com.jdroid.java.utils.FileUtils;
 import com.jdroid.java.utils.LoggerUtils;
+import com.jdroid.java.utils.StreamUtils;
+import org.slf4j.Logger;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class CacheParser implements Parser {
 	
@@ -24,7 +26,7 @@ public class CacheParser implements Parser {
 	@Override
 	public Object parse(InputStream inputStream) {
 		
-		final InputStream inputStreamCopy = FileUtils.copy(inputStream);
+		final InputStream inputStreamCopy = StreamUtils.copy(inputStream);
 		Object object = parser.parse(inputStreamCopy);
 		
 		ExecutorUtils.execute(new Runnable() {

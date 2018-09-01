@@ -10,10 +10,9 @@ import com.jdroid.java.http.HttpServiceProcessor;
 import com.jdroid.java.http.MultipartHttpService;
 import com.jdroid.java.http.parser.Parser;
 import com.jdroid.java.http.post.BodyEnclosingHttpService;
-import com.jdroid.java.utils.FileUtils;
 import com.jdroid.java.utils.LoggerUtils;
+import com.jdroid.java.utils.StreamUtils;
 import com.jdroid.java.utils.StringUtils;
-
 import org.slf4j.Logger;
 
 import java.io.ByteArrayInputStream;
@@ -21,6 +20,8 @@ import java.io.InputStream;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
 
 /**
  * Mocked {@link HttpService} and {@link BodyEnclosingHttpService} implementation that returns mocked responses
@@ -67,7 +68,7 @@ public abstract class AbstractMockHttpService implements MultipartHttpService {
 		
 		Integer httpMockSleep = getHttpMockSleepDuration(urlSegments.toArray());
 		if ((httpMockSleep != null) && (httpMockSleep > 0)) {
-			ExecutorUtils.sleep(httpMockSleep);
+			ExecutorUtils.sleep(httpMockSleep, TimeUnit.SECONDS);
 		}
 		
 		simulateCrash();
@@ -79,7 +80,7 @@ public abstract class AbstractMockHttpService implements MultipartHttpService {
 			}
 			// Parse the stream
 			T t = (T)(parser.parse(inputStream));
-			FileUtils.safeClose(inputStream);
+			StreamUtils.safeClose(inputStream);
 			return t;
 		} else {
 			return null;

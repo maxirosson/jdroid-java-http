@@ -7,10 +7,9 @@ import com.jdroid.java.http.HttpService;
 import com.jdroid.java.http.HttpServiceProcessor;
 import com.jdroid.java.http.parser.Parser;
 import com.jdroid.java.http.post.BodyEnclosingHttpService;
-import com.jdroid.java.utils.FileUtils;
 import com.jdroid.java.utils.Hasher;
 import com.jdroid.java.utils.LoggerUtils;
-
+import com.jdroid.java.utils.StreamUtils;
 import org.slf4j.Logger;
 
 import java.io.File;
@@ -73,7 +72,7 @@ public abstract class CachedHttpService implements BodyEnclosingHttpService {
 				} catch (Exception e) {
 					LoggerUtils.logHandledException(LOGGER, e);
 				} finally {
-					FileUtils.safeClose(fileInputStream);
+					StreamUtils.safeClose(fileInputStream);
 				}
 			}
 		} else {

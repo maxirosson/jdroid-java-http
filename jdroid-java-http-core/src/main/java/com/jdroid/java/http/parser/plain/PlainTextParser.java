@@ -1,10 +1,10 @@
 package com.jdroid.java.http.parser.plain;
 
-import java.io.InputStream;
+import com.jdroid.java.utils.LoggerUtils;
+import com.jdroid.java.utils.StreamUtils;
 import org.slf4j.Logger;
 
-import com.jdroid.java.utils.FileUtils;
-import com.jdroid.java.utils.LoggerUtils;
+import java.io.InputStream;
 
 public abstract class PlainTextParser implements com.jdroid.java.http.parser.Parser {
 	
@@ -18,7 +18,7 @@ public abstract class PlainTextParser implements com.jdroid.java.http.parser.Par
 		LOGGER.debug("Parsing started.");
 		try {
 			// Read the plain text response
-			String result = FileUtils.toString(inputStream);
+			String result = StreamUtils.toString(inputStream);
 			LOGGER.debug(result);
 			
 			// Parse the plain text
