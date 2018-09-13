@@ -1,5 +1,16 @@
 # Change Log
 
+## [v2.0.0](https://github.com/maxirosson/jdroid-java-http/tree/v2.0.0) (2018-09-13)
+[Full Changelog](https://github.com/maxirosson/jdroid-java-http/compare/v1.0.0...v2.0.0)
+
+**Implemented enhancements:**
+
+- Changed timeouts from Integer to Long [\#7](https://github.com/maxirosson/jdroid-java-http/issues/7)
+
+**Closed issues:**
+
+- Upgrade to OkHttp v3.11.0 [\#8](https://github.com/maxirosson/jdroid-java-http/issues/8)
+
 ## [v1.0.0](https://github.com/maxirosson/jdroid-java-http/tree/v1.0.0) (2018-04-10)
 [Full Changelog](https://github.com/maxirosson/jdroid-java-http/compare/v0.15.0...v1.0.0)
 
