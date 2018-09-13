@@ -3,7 +3,7 @@ version = '2.0.0'
 ext.JDROID_GITHUB_REPOSITORY_NAME = 'jdroid-java-http'
 
 // https://github.com/maxirosson/jdroid-gradle-plugin/blob/master/CHANGELOG.md
-ext.JDROID_GRADLE_PLUGIN_VERSION = '1.1.0-SNAPSHOT'
+ext.JDROID_GRADLE_PLUGIN_VERSION = '1.1.0'
 
 // https://github.com/maxirosson/jdroid-java/blob/master/CHANGELOG.md
 ext.JDROID_JAVA_VERSION = '2.0.0'
@@ -29,7 +29,7 @@ buildscript {
 		classpath 'com.jdroidtools:jdroid-component-builder:1.0.2'
 
 		// https://github.com/maxirosson/jdroid-gradle-plugin/blob/master/CHANGELOG.md
-		classpath 'com.jdroidtools:jdroid-gradle-root-plugin:1.1.0-SNAPSHOT'
+		classpath 'com.jdroidtools:jdroid-gradle-root-plugin:1.1.0'
 	}
 }
 
