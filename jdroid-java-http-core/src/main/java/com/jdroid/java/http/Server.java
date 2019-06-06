@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface Server {
 	
-	public String getName();
+	public String getServerName();
 	
 	public String getBaseUrl();
 	

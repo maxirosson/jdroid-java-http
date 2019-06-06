@@ -21,7 +21,7 @@ public class DefaultServer implements Server {
 	}
 	
 	@Override
-	public String getName() {
+	public String getServerName() {
 		return name;
 	}
 	
