@@ -31,18 +31,18 @@ public class DefaultServer implements Server {
 	}
 	
 	@Override
-	public Boolean supportsSsl() {
+	public boolean supportsSsl() {
 		return supportsSsl;
 	}
 	
 	@Override
-	public Boolean isProduction() {
+	public boolean isProduction() {
 		return true;
 	}
 	
 	@Override
 	public List<HttpServiceProcessor> getHttpServiceProcessors() {
-		return Lists.<HttpServiceProcessor>newArrayList(DefaultHttpResponseValidator.get());
+		return Lists.newArrayList(DefaultHttpResponseValidator.get());
 	}
 	
 	@Override

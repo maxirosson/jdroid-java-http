@@ -31,7 +31,7 @@ public class GsonParser implements Parser {
 	
 	protected Gson createGson() {
 		GsonBuilder gsonBuilder = new GsonBuilder();
-		gsonBuilder.setDateFormat(DateConfiguration.getDefaultDateTimeFormat());
+		gsonBuilder.setDateFormat(DateConfiguration.INSTANCE.getDefaultDateTimeFormat());
 		return gsonBuilder.create();
 	}
 }
