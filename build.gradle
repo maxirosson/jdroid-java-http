@@ -1,4 +1,4 @@
-version = '2.1.0'
+version = '3.0.0'
 
 ext.JDROID_GITHUB_REPOSITORY_NAME = 'jdroid-java-http'
 
@@ -6,7 +6,7 @@ ext.JDROID_GITHUB_REPOSITORY_NAME = 'jdroid-java-http'
 ext.JDROID_GRADLE_PLUGIN_VERSION = '2.0.0-SNAPSHOT'
 
 // https://github.com/maxirosson/jdroid-java/blob/master/CHANGELOG.md
-ext.JDROID_JAVA_VERSION = '2.1.0-SNAPSHOT'
+ext.JDROID_JAVA_VERSION = '3.0.0-SNAPSHOT'
 
 apply plugin: 'com.jdroid.component.builder'
 apply plugin: 'com.jdroid.root'
