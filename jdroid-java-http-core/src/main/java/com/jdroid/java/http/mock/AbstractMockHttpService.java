@@ -68,7 +68,7 @@ public abstract class AbstractMockHttpService implements MultipartHttpService {
 		
 		Integer httpMockSleep = getHttpMockSleepDuration(urlSegments.toArray());
 		if ((httpMockSleep != null) && (httpMockSleep > 0)) {
-			ExecutorUtils.sleep(httpMockSleep, TimeUnit.SECONDS);
+			ExecutorUtils.INSTANCE.sleep(httpMockSleep, TimeUnit.SECONDS);
 		}
 		
 		simulateCrash();

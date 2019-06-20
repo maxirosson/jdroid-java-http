@@ -29,7 +29,7 @@ public class CacheParser implements Parser {
 		final InputStream inputStreamCopy = StreamUtils.copy(inputStream);
 		Object object = parser.parse(inputStreamCopy);
 		
-		ExecutorUtils.execute(new Runnable() {
+		ExecutorUtils.INSTANCE.execute(new Runnable() {
 			
 			@Override
 			public void run() {

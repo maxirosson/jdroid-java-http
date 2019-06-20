@@ -40,7 +40,7 @@ public enum CachingStrategy {
 			if (response == null) {
 				response = cachedHttpService.executeRequest(parser);
 			} else {
-				ExecutorUtils.execute(new Runnable() {
+				ExecutorUtils.INSTANCE.execute(new Runnable() {
 					
 					@Override
 					public void run() {
@@ -97,7 +97,7 @@ public enum CachingStrategy {
 				response = cachedHttpService.executeRequest(parser);
 			} else {
 				cachedHttpService.setTimeToLive(originalTimeToLive);
-				ExecutorUtils.execute(new Runnable() {
+				ExecutorUtils.INSTANCE.execute(new Runnable() {
 					
 					@Override
 					public void run() {
