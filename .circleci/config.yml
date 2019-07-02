@@ -1,5 +1,7 @@
 version: 2
 
+references:
+
   ## Workspace
 
   workspace: &workspace
@@ -65,11 +67,6 @@ jobs:
       - run:
           name: Verifying
           command: ./gradlew check --stacktrace
-
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: app-{{ .Branch }}-{{ checksum "build.gradle" }}
 
       - run:
           name: Saving test results
