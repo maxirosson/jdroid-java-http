@@ -3,7 +3,7 @@ version: 2
   ## Workspace
 
   workspace: &workspace
-               ~/workspace
+    ~/workspace
 
   ## Cache
 
