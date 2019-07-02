@@ -60,7 +60,7 @@ public abstract class CachedHttpService implements BodyEnclosingHttpService {
 		File cacheFile = new File(getHttpCacheDirectory(cache), generateCacheFileName());
 		if (cacheFile.exists() && (cacheFile.length() > 0)) {
 			
-			long diff = DateUtils.nowMillis() - cacheFile.lastModified();
+			long diff = DateUtils.INSTANCE.nowMillis() - cacheFile.lastModified();
 			if ((timeToLive == null) || ((diff >= 0) && (diff < timeToLive))) {
 				FileInputStream fileInputStream = null;
 				try {
