@@ -14,12 +14,12 @@ import java.util.zip.ZipInputStream;
  * Parser used to handle a file contained inside a zip.
  */
 public class ZipFileParser implements com.jdroid.java.http.parser.Parser {
-	
+
 	private static final Logger LOGGER = LoggerUtils.getLogger(ZipFileParser.class);
-	
+
 	private com.jdroid.java.http.parser.Parser innerParser;
 	private String fileName;
-	
+
 	/**
 	 * @param innerParser {@link com.jdroid.java.http.parser.Parser} to use to handle the extracted file.
 	 * @param fileName Name of the file to extract of the zip.
@@ -28,14 +28,11 @@ public class ZipFileParser implements com.jdroid.java.http.parser.Parser {
 		this.innerParser = innerParser;
 		this.fileName = fileName;
 	}
-	
-	/**
-	 * @see com.jdroid.java.http.parser.Parser#parse(java.io.InputStream)
-	 */
+
 	@SuppressWarnings("resource")
 	@Override
 	public Object parse(InputStream inputStream) {
-		
+
 		ZipInputStream zipInputStream = new ZipInputStream(inputStream);
 		try {
 			ZipEntry entry;
@@ -50,10 +47,7 @@ public class ZipFileParser implements com.jdroid.java.http.parser.Parser {
 		}
 		return null;
 	}
-	
-	/**
-	 * @see com.jdroid.java.http.parser.Parser#parse(java.lang.String)
-	 */
+
 	@Override
 	public Object parse(String input) {
 		return null;
