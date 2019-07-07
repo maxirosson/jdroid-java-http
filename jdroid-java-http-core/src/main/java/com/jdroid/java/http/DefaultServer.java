@@ -42,7 +42,7 @@ public class DefaultServer implements Server {
 	
 	@Override
 	public List<HttpServiceProcessor> getHttpServiceProcessors() {
-		return Lists.newArrayList(DefaultHttpResponseValidator.get());
+		return Lists.newArrayList(new BasicHttpResponseValidator());
 	}
 	
 	@Override

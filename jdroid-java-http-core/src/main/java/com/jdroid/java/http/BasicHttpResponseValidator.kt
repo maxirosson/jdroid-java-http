@@ -3,7 +3,7 @@ package com.jdroid.java.http
 import com.jdroid.java.http.exception.ConnectionException
 import com.jdroid.java.http.exception.HttpResponseException
 
-open class BasicHttpResponseValidator protected constructor() : HttpServiceProcessor {
+open class BasicHttpResponseValidator : HttpServiceProcessor {
 
     override fun onInit(httpService: HttpService) {
         // Do Nothing
@@ -37,7 +37,7 @@ open class BasicHttpResponseValidator protected constructor() : HttpServiceProce
         throw HttpResponseException(message)
     }
 
-    protected fun onServerError(httpResponse: HttpResponseWrapper, message: String) {
+    protected open fun onServerError(httpResponse: HttpResponseWrapper, message: String) {
         // 504 - Gateway Timeout
         if (httpResponse.getStatusCode() == 504) {
             throw ConnectionException(message)
