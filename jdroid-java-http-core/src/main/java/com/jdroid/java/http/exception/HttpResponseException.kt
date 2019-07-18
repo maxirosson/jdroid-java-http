@@ -8,7 +8,7 @@ import com.jdroid.java.exception.ErrorCodeException
 class HttpResponseException(message: String) : ErrorCodeException(HttpErrorCode.HTTP_RESPONSE_ERROR, message) {
 
     init {
-        isTrackable = true
+        setTrackable(true)
     }
 
     companion object {
