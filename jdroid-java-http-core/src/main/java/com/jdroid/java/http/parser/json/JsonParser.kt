@@ -17,7 +17,7 @@ import java.io.InputStream
 </T> */
 abstract class JsonParser<T> : Parser {
 
-    override fun parse(input: String): Any {
+    override fun parse(input: String): Any? {
 
         LOGGER.trace("Parsing started.")
         try {
@@ -54,7 +54,7 @@ abstract class JsonParser<T> : Parser {
      * @param json
      * @return The parsed object
      */
-    abstract fun parse(json: T): Any
+    abstract fun parse(json: T): Any?
 
     /**
      * Parses a list of items.
