@@ -35,12 +35,12 @@ public abstract class AbstractMockHttpService implements MultipartHttpService {
 	private static final String URL_SEPARATOR = "/";
 	
 	private List<Object> urlSegments;
-	private Map<String, String> parameters = Maps.newHashMap();
-	private Map<String, String> headers = Maps.newHashMap();
+	private Map<String, String> parameters = Maps.INSTANCE.newHashMap();
+	private Map<String, String> headers = Maps.INSTANCE.newHashMap();
 	private String body;
 	
 	public AbstractMockHttpService(Object... urlSegments) {
-		this.urlSegments = Lists.newArrayList();
+		this.urlSegments = Lists.INSTANCE.newArrayList();
 		if (urlSegments != null) {
 			for (Object segment : urlSegments) {
 				addUrlSegment(segment);

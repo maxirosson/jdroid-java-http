@@ -46,13 +46,13 @@ public abstract class AbstractApiService {
 		if (isHttpMockEnabled() || mocked) {
 			return getAbstractMockHttpServiceInstance(urlSegments);
 		} else {
-			return httpServiceFactory.newGetService(getServer(), Lists.newArrayList(urlSegments), processors);
+			return httpServiceFactory.newGetService(getServer(), Lists.INSTANCE.newArrayList(urlSegments), processors);
 		}
 	}
 
 	protected HttpService newCachedGetService(Cache cache, CachingStrategy cachingStrategy, Long timeToLive,
 											 List<HttpServiceProcessor> processors, Object... urlSegments) {
-		return newCachedGetService(httpServiceFactory.newGetService(getServer(), Lists.newArrayList(urlSegments), processors), cache,
+		return newCachedGetService(httpServiceFactory.newGetService(getServer(), Lists.INSTANCE.newArrayList(urlSegments), processors), cache,
 				cachingStrategy, timeToLive);
 	}
 
@@ -80,7 +80,7 @@ public abstract class AbstractApiService {
 		if (isHttpMockEnabled() || mocked) {
 			return getAbstractMockHttpServiceInstance(urlSegments);
 		} else {
-			return httpServiceFactory.newPostService(getServer(), Lists.newArrayList(urlSegments), processors);
+			return httpServiceFactory.newPostService(getServer(), Lists.INSTANCE.newArrayList(urlSegments), processors);
 		}
 	}
 
@@ -94,7 +94,7 @@ public abstract class AbstractApiService {
 		if (isHttpMockEnabled() || mocked) {
 			return getAbstractMockHttpServiceInstance(urlSegments);
 		} else {
-			return httpServiceFactory.newMultipartPostService(getServer(), Lists.newArrayList(urlSegments),
+			return httpServiceFactory.newMultipartPostService(getServer(), Lists.INSTANCE.newArrayList(urlSegments),
 					getHttpServiceProcessors());
 		}
 	}
@@ -109,7 +109,7 @@ public abstract class AbstractApiService {
 		if (isHttpMockEnabled() || mocked) {
 			return getAbstractMockHttpServiceInstance(urlSegments);
 		} else {
-			return httpServiceFactory.newFormPostService(getServer(), Lists.newArrayList(urlSegments), getHttpServiceProcessors());
+			return httpServiceFactory.newFormPostService(getServer(), Lists.INSTANCE.newArrayList(urlSegments), getHttpServiceProcessors());
 		}
 	}
 	
@@ -127,7 +127,7 @@ public abstract class AbstractApiService {
 		if (isHttpMockEnabled() || mocked) {
 			return getAbstractMockHttpServiceInstance(urlSegments);
 		} else {
-			return httpServiceFactory.newPutService(getServer(), Lists.newArrayList(urlSegments), processors);
+			return httpServiceFactory.newPutService(getServer(), Lists.INSTANCE.newArrayList(urlSegments), processors);
 		}
 	}
 
@@ -147,7 +147,7 @@ public abstract class AbstractApiService {
 		if (isHttpMockEnabled() || mocked) {
 			return getAbstractMockHttpServiceInstance(urlSegments);
 		} else {
-			return httpServiceFactory.newMultipartPutService(getServer(), Lists.newArrayList(urlSegments),
+			return httpServiceFactory.newMultipartPutService(getServer(), Lists.INSTANCE.newArrayList(urlSegments),
 					getHttpServiceProcessors());
 		}
 	}
@@ -170,7 +170,7 @@ public abstract class AbstractApiService {
 		if (isHttpMockEnabled() || mocked) {
 			return getAbstractMockHttpServiceInstance(urlSegments);
 		} else {
-			return httpServiceFactory.newDeleteService(getServer(), Lists.newArrayList(urlSegments), processors);
+			return httpServiceFactory.newDeleteService(getServer(), Lists.INSTANCE.newArrayList(urlSegments), processors);
 		}
 	}
 
@@ -194,7 +194,7 @@ public abstract class AbstractApiService {
 		if (isHttpMockEnabled() || mocked) {
 			return getAbstractMockHttpServiceInstance(urlSegments);
 		} else {
-			return httpServiceFactory.newPatchService(getServer(), Lists.newArrayList(urlSegments), processors);
+			return httpServiceFactory.newPatchService(getServer(), Lists.INSTANCE.newArrayList(urlSegments), processors);
 		}
 	}
 

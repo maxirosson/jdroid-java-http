@@ -35,12 +35,12 @@ public abstract class AbstractHttpService implements HttpService {
 	private List<Object> urlSegments;
 
 	/** Query Parameter values of the request. */
-	private Map<String, String> queryParameters = Maps.newLinkedHashMap();
+	private Map<String, String> queryParameters = Maps.INSTANCE.newLinkedHashMap();
 
 	/** Header values of the request. */
-	private Map<String, String> headers = Maps.newHashMap();
+	private Map<String, String> headers = Maps.INSTANCE.newHashMap();
 
-	private List<HttpServiceProcessor> httpServiceProcessors = Lists.newArrayList();
+	private List<HttpServiceProcessor> httpServiceProcessors = Lists.INSTANCE.newArrayList();
 
 	private HttpResponseWrapper httpResponseWrapper;
 
@@ -52,7 +52,7 @@ public abstract class AbstractHttpService implements HttpService {
 	public AbstractHttpService(Server server, List<Object> urlSegments,
 							   List<HttpServiceProcessor> httpServiceProcessors) {
 
-		this.urlSegments = Lists.newArrayList();
+		this.urlSegments = Lists.INSTANCE.newArrayList();
 		if (urlSegments != null) {
 			for (Object segment : urlSegments) {
 				addUrlSegment(segment);
