@@ -1,12 +1,7 @@
 version = '3.0.0'
 
-ext.JDROID_GITHUB_REPOSITORY_NAME = 'jdroid-java-http'
-
-// https://github.com/maxirosson/jdroid-gradle-plugin/blob/master/CHANGELOG.md
-ext.JDROID_GRADLE_PLUGIN_VERSION = '2.1.0-SNAPSHOT'
-
-// https://github.com/maxirosson/jdroid-java/blob/master/CHANGELOG.md
-ext.JDROID_JAVA_VERSION = '3.0.0-SNAPSHOT'
+ext.GITHUB_REPOSITORY_NAME = 'jdroid-java-http'
+ext.RELEASES_HUB_GRADLE_PLUGIN_ENABLED = true
 
 apply plugin: 'com.jdroidtools.component.builder'
 apply plugin: 'com.jdroidtools.root'
@@ -59,11 +54,8 @@ buildscript {
 		}
 	}
 	dependencies {
-		// https://github.com/maxirosson/jdroid-component-builder/blob/master/CHANGELOG.md
-		classpath 'com.jdroidtools:jdroid-component-builder:2.0.0'
-
-		// https://github.com/maxirosson/jdroid-gradle-plugin/blob/master/CHANGELOG.md
-		classpath 'com.jdroidtools:jdroid-gradle-root-plugin:2.1.0-SNAPSHOT'
+		classpath(BuildLibs.jdroid_component_builder)
+		classpath(BuildLibs.jdroid_gradle_root_plugin)
 	}
 }
 

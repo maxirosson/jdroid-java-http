@@ -6,7 +6,7 @@ description = 'Http Layer for Jdroid'
 
 buildscript {
 	dependencies {
-		classpath 'com.jdroidtools:jdroid-gradle-java-plugin:' + JDROID_GRADLE_PLUGIN_VERSION
+		classpath(BuildLibs.jdroid_gradle_java_plugin)
 	}
 }
 
@@ -15,12 +15,12 @@ dependencies {
 	if (jdroid.propertyResolver.getBooleanProp("JDROID_JAVA_AS_PROJECT_DEPENDENCY", false)) {
 		api project(":jdroid-java-core")
 	} else {
-		api 'com.jdroidtools:jdroid-java-core:' + JDROID_JAVA_VERSION
+		api(Libs.jdroid_java_core)
 	}
 
 	// Testing
-	testImplementation "org.testng:testng:6.8.21"
-	testImplementation "org.mockito:mockito-all:1.10.19"
+	testImplementation(Libs.testng)
+	testImplementation(Libs.mockito)
 }
 
 test {
