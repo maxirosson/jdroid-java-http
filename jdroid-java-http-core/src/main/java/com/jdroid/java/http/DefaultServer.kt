@@ -1,6 +1,6 @@
 package com.jdroid.java.http
 
-class DefaultServer(private val name: String, private val baseUrl: String, private val supportsSsl: Boolean?) : Server {
+class DefaultServer(private val name: String, private val baseUrl: String, private val supportsSsl: Boolean) : Server {
 
     constructor(baseUrl: String) : this(DefaultServer::class.java.simpleName, baseUrl, true) {}
 
@@ -13,7 +13,7 @@ class DefaultServer(private val name: String, private val baseUrl: String, priva
     }
 
     override fun supportsSsl(): Boolean {
-        return supportsSsl!!
+        return supportsSsl
     }
 
     override fun isProduction(): Boolean {

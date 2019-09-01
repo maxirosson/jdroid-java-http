@@ -1,8 +1,8 @@
-apply plugin: 'com.jdroidtools.java.library'
-
 ext.ARTIFACT_ID = 'jdroid-java-http-okhttp'
 ext.PROJECT_NAME = 'Jdroid Java Http OKHttp'
 description = 'OKHttp Http Layer Implementation for Jdroid'
+
+apply plugin: 'com.jdroidtools.java.library'
 
 buildscript {
 	dependencies {
