@@ -1,5 +1,12 @@
 # Change Log
 
+## [v3.0.0](https://github.com/maxirosson/jdroid-java-http/tree/v3.0.0) (2019-09-01)
+[Full Changelog](https://github.com/maxirosson/jdroid-java-http/compare/v2.0.0...v3.0.0)
+
+**Implemented enhancements:**
+
+- Upgrade to OkHttp 4 [\#9](https://github.com/maxirosson/jdroid-java-http/issues/9)
+
 ## [v2.0.0](https://github.com/maxirosson/jdroid-java-http/tree/v2.0.0) (2018-09-13)
 [Full Changelog](https://github.com/maxirosson/jdroid-java-http/compare/v1.0.0...v2.0.0)
 
