@@ -130,3 +130,5 @@ workflows:
             branches:
               only:
                 - master
+    jobs:
+      - upgradeDependencies
