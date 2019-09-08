@@ -12,13 +12,9 @@ class ReadResponseCommand : OkHttpCommand<Response, InputStream>() {
     override fun doExecute(response: Response): InputStream? {
         var inputStream: InputStream? = null
         if (response.code != 204) {
-            inputStream = response.body!!.byteStream()
+            inputStream = response.body?.byteStream()
             val contentEncoding = response.header(HttpService.CONTENT_ENCODING_HEADER)
-            if (inputStream != null && contentEncoding != null && contentEncoding.equals(
-                    HttpService.GZIP_ENCODING,
-                    ignoreCase = true
-                )
-            ) {
+            if (inputStream != null && contentEncoding != null && contentEncoding.equals(HttpService.GZIP_ENCODING, ignoreCase = true)) {
                 inputStream = GZIPInputStream(inputStream)
             }
         }

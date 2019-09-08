@@ -20,7 +20,7 @@ abstract class PlainTextParser : com.jdroid.java.http.parser.Parser {
         }
     }
 
-    abstract override fun parse(plainText: String): Any
+    abstract override fun parse(input: String): Any
 
     companion object {
 

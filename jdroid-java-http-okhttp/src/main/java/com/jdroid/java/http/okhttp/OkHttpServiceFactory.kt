@@ -1,6 +1,5 @@
 package com.jdroid.java.http.okhttp
 
-import com.jdroid.java.collections.Lists
 import com.jdroid.java.http.HttpService
 import com.jdroid.java.http.HttpServiceFactory
 import com.jdroid.java.http.HttpServiceProcessor
@@ -12,12 +11,11 @@ import com.jdroid.java.http.okhttp.patch.OkPatchHttpService
 import com.jdroid.java.http.okhttp.post.OkPostHttpService
 import com.jdroid.java.http.okhttp.put.OkPutHttpService
 import com.jdroid.java.http.post.BodyEnclosingHttpService
-
 import okhttp3.Interceptor
 
 class OkHttpServiceFactory : HttpServiceFactory {
 
-    protected var networkInterceptors: MutableList<Interceptor> = Lists.newArrayList()
+    protected var networkInterceptors: MutableList<Interceptor> = mutableListOf()
 
     override fun newGetService(server: Server, urlSegments: List<Any>, httpServiceProcessors: List<HttpServiceProcessor>): HttpService {
         val service = OkGetHttpService(server, urlSegments, httpServiceProcessors)

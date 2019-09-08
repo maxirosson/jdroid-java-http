@@ -1,13 +1,11 @@
 package com.jdroid.java.http.parser.json
 
-import com.jdroid.java.collections.Lists
 import com.jdroid.java.http.parser.Parser
 import com.jdroid.java.json.JSONArray
 import com.jdroid.java.json.JSONException
 import com.jdroid.java.json.JSONObject
 import com.jdroid.java.utils.LoggerUtils
 import com.jdroid.java.utils.StreamUtils
-import com.jdroid.java.utils.StringUtils
 import java.io.InputStream
 
 /**
@@ -17,6 +15,7 @@ import java.io.InputStream
 </T> */
 abstract class JsonParser<T> : Parser {
 
+    @Suppress("UNCHECKED_CAST")
     override fun parse(input: String): Any? {
 
         LOGGER.trace("Parsing started.")
@@ -35,7 +34,7 @@ abstract class JsonParser<T> : Parser {
             return parse(json)
         } catch (e: JSONException) {
             val message = e.message
-            if (message != null && input != null && message.startsWith("A JSONObject text must begin with '{'")) {
+            if (message != null && message.startsWith("A JSONObject text must begin with '{'")) {
                 throw JSONException("Invalid json [" + input.substring(0, Math.min(input.length, 70)) + "]")
             } else {
                 throw e
@@ -47,7 +46,7 @@ abstract class JsonParser<T> : Parser {
 
     override fun parse(inputStream: InputStream): Any? {
         val content = StreamUtils.toString(inputStream)
-        return if (StringUtils.isNotBlank(content)) parse(content) else null
+        return if (content.isNotBlank()) parse(content) else null
     }
 
     /**
@@ -79,8 +78,9 @@ abstract class JsonParser<T> : Parser {
      * @param parser The [JsonParser] to parse each list item.
      * @return The parsed list.
     </ITEM> */
+    @Suppress("UNCHECKED_CAST")
     protected fun <ITEM> parseList(jsonArray: JSONArray?, parser: JsonParser<JSONObject>): List<ITEM> {
-        val list = Lists.newArrayList<ITEM>()
+        val list = mutableListOf<ITEM>()
         if (jsonArray != null) {
             val length = jsonArray.length()
             for (i in 0 until length) {

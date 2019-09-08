@@ -18,11 +18,6 @@ dependencies {
 	api(Libs.okhttp)
 
 	// Testing
-	testImplementation(Libs.testng)
+	testImplementation(Libs.junit)
 	testImplementation(Libs.mockito)
-}
-
-test {
-	useTestNG {
-	}
 }

@@ -20,7 +20,7 @@ class OkPutHttpService(server: Server, urlSegments: List<Any>, httpServiceProces
         return HttpMethod.PUT
     }
 
-    override fun addPart(name: String, `in`: ByteArrayInputStream, mimeType: String, filename: String) {
+    override fun addPart(name: String, inputStream: ByteArrayInputStream, mimeType: String, filename: String) {
         throw UnsupportedOperationException()
     }
 
