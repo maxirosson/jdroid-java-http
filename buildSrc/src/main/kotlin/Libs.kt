@@ -3,7 +3,7 @@ object Libs {
     const val jdroid_java_core = "com.jdroidtools:jdroid-java-core:3.1.0-SNAPSHOT"
 
     // https://github.com/square/okhttp/blob/master/CHANGELOG.md
-    const val okhttp = "com.squareup.okhttp3:okhttp:4.1.1"
+    const val okhttp = "com.squareup.okhttp3:okhttp:4.2.0"
 
     // Testing
     const val junit = "junit:junit:4.12"
