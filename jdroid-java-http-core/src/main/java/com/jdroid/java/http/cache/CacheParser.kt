@@ -34,5 +34,4 @@ class CacheParser(private val parser: Parser, private val cacheFile: File) : Par
     override fun parse(input: String): Any? {
         return null
     }
-
 }

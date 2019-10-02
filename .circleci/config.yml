@@ -114,7 +114,8 @@ workflows:
   commit:
     jobs:
       - ktlint
-      - build
+      - build:
+          - ktlint
       - verify:
           requires:
             - build
@@ -124,7 +125,6 @@ workflows:
               only:
                 - master
           requires:
-            - ktlint
             - verify
   weekly:
     triggers:
